@@ -9,13 +9,23 @@ function makeGrid(rows, columns) {
     };
 };
 
-makeGrid(30, 30);
+function randomBgColor() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    return bgColor;
+}
+
+makeGrid(20, 20);
 
 const gridItem = document.querySelectorAll('.grid-item');
 console.log(gridItem);
 
 gridItem.forEach(function(grab) {
-    grab.addEventListener('mouseover', function() {
-        grab.style.backgroundColor = "black";
+    grab.addEventListener('mouseover', event => {
+        bgColor = randomBgColor(); 
+        grab.style.backgroundColor = bgColor;
     });
 });
+

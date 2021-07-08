@@ -68,6 +68,7 @@ html {
     grid-template-rows: repeat(var(--grid-rows), minmax(1px, 1fr));
     grid-template-columns: repeat(var(--grid-columns), minmax(1px, 1fr));    margin: 0 auto;
     width: 960px;
+    height: 100vh;
     border: 1px solid black;
 }
 
