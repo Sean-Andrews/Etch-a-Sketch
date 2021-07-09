@@ -121,6 +121,23 @@ body {
 }
 
 #clear {
-  left: 27%;
-  top: 86.5%;
+  top: 87.5%;
+  right: 87.5%;
+}
+
+#color {
+  left: 87%;
+  top: 87.5%;
+  opacity: 0;
+  z-index: 2;
+}
+
+#dummy {
+  left: 87%;
+  top: 87.5%;
+}
+
+#randomize {
+  top: 87.5%;
+  left: 44.5%; 
 }

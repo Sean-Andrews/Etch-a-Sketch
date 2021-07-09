@@ -21,7 +21,7 @@ const box = document.querySelectorAll('.square');
 
 box.forEach((pixel) => {
     pixel.addEventListener('mouseover', event => {
-        pixel.style.backgroundColor = 'black';
+        pixel.style.backgroundColor = document.getElementById('color').value;
     });
 });
 }
@@ -49,4 +49,4 @@ function resetBoard() {
             makeGrid(num, num);
         }            
 }
-// Create button to change color of sketch
+// Create button to randomize color of sketch
