@@ -1,31 +1,20 @@
-const game = document.getElementById("game");
+// Create a game grid of divs 
 
-function makeGrid(rows, columns) {
-    game.style.setProperty('--grid-rows', rows);
-    game.style.setProperty('--grid-columns', columns);
-    for (c = 0; c < (rows * columns); c++) {
+const gameBoard = document.getElementById('game');
+
+function makeGrid(rows, cols) {
+    gameBoard.style.setProperty('--grid-rows', rows);
+    gameBoard.style.setProperty('--grid-cols', cols);
+    for (let i=0; i < rows * cols; i++) {
         let cell = document.createElement('div');
-        game.appendChild(cell).className = "grid-item";
+        gameBoard.appendChild(cell).className = 'square'
     };
 };
 
-function randomBgColor() {
-    let x = Math.floor(Math.random() * 256);
-    let y = Math.floor(Math.random() * 256);
-    let z = Math.floor(Math.random() * 256);
-    let bgColor = "rgb(" + x + "," + y + "," + z + ")";
-    return bgColor;
-}
+makeGrid(16, 16);
 
-makeGrid(20, 20);
+// Change color of each div in game grid
 
-const gridItem = document.querySelectorAll('.grid-item');
-console.log(gridItem);
+// Create button to reset board and input new grid
 
-gridItem.forEach(function(grab) {
-    grab.addEventListener('mouseover', event => {
-        bgColor = randomBgColor(); 
-        grab.style.backgroundColor = bgColor;
-    });
-});
-
+// Create button to change color of sketch
