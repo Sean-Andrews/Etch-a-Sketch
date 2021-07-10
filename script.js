@@ -35,7 +35,7 @@ function makeGrid(rows, cols) {
     colorGrid();
 };
 
-// Color function to change color of sketch
+// Function to change color of sketch
 
 function colorGrid(){
     let box = document.querySelectorAll('.square');
@@ -54,6 +54,9 @@ function colorGrid(){
 
 function resetBoard() {
     let num = prompt("Pick a number between and 64: ");
+        while (gameBoard.firstChild) {
+        gameBoard.removeChild(gameBoard.firstChild);
+        }
         if (num > 64) {
             alert("That number was too high");
             resetBoard();
@@ -68,9 +71,6 @@ function resetBoard() {
                     pixel.style.backgroundColor = 'black';
                 })
             });
-            while (gameBoard.firstChild) {
-                gameBoard.removeChild(gameBoard.firstChild);
-            }
             makeGrid(num, num);
         };            
 };
