@@ -105,13 +105,13 @@ body {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    background-color: rgb(139, 138, 138);
+    background-color: rgb(182, 181, 181);
   }
 
 /* Adds class for JS to manipulate color */
 
 .square {
-    background-color: rgb(139, 138, 138);
+    background-color: rgb(182, 181, 181);
 }
 
 /* button stylings */
