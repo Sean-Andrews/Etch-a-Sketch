@@ -5,6 +5,7 @@ let randomColor;
 let num = 16;
 const randomize = document.getElementById('randomize');
 const resetBtn = document.getElementById('clear');
+let mouseDown = false;
 
 // Resets the board when user presses the 'clear' button
 
@@ -43,8 +44,12 @@ function colorGrid(){
            wildColor();
         } else {
                 box.forEach((pixel) => {
+                pixel.addEventListener('mousedown', () => mouseDown = true);
                 pixel.addEventListener('mouseover', event => {
-                    pixel.style.backgroundColor = document.getElementById('color').value;
+                    if (mouseDown) {
+                        pixel.style.backgroundColor = document.getElementById('color').value;
+                    }
+                pixel.addEventListener('mouseup', () => mouseDown = false); 
             });
         });    
         };
@@ -80,9 +85,13 @@ function resetBoard() {
 function wildColor() {
     let box = document.querySelectorAll('.square');
     box.forEach((pixel) => {
+        pixel.addEventListener('mousedown', () => mouseDown = true);
         pixel.addEventListener('mouseover', event => {
-            pixel.style.backgroundColor = pixelColor();
+            if (mouseDown) {
+                pixel.style.backgroundColor = pixelColor();
+            }
         })
+        pixel.addEventListener('mouseup', () => mouseDown = false);
     })
 }
 
